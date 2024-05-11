@@ -26,15 +26,15 @@ export default function api(
         type={type}
         mdn={mdn}
       />{" "}
-      {!stable && <span className="badge is-unstable">unstable</span>}
-      {deprecated && <span className="badge is-deprecated">deprecated</span>}
-      {deploy && <span className="badge is-deploy">deploy</span>}
       {syncName && (
         <>
           {" / "}
           <Link name={syncName} text="sync" stable={stable} type="variable" />
         </>
-      )}
+      )} {!stable && <span className="badge is-unstable">unstable</span>}{" "}
+      {deprecated && <span className="badge is-deprecated">deprecated</span>}
+      {" "}
+      {deploy && <span className="badge is-deploy">deploy</span>}
     </p>
   );
 }
